@@ -33,7 +33,7 @@
 \begin{document}
 
 \DTLassign{list}{1}{\institution=Institution,\position=Position,\dept=Department,\addressi=Address1,\addressii=Address2,\addressiii=Address3,\city=City,\state=State,\zip=Zip,\country=Country}
-\DTLassign{info}{1}{\name=Name,\appaddressi=ApplicantAddress1,\appaddressii=ApplicantAddress2,\appaddressiii=ApplicantAddress3,\appcity=ApplicantCity,\appstate=ApplicantState,\appzip=ApplicantCountry,\phone=Phone,\email=Email,\body=Body}
+\DTLassign{info}{1}{\name=Name,\appinst=ApplicantInstitution,\appdept=ApplicantDepartment,\appaddressi=ApplicantAddress1,\appaddressii=ApplicantAddress2,\appaddressiii=ApplicantAddress3,\appcity=ApplicantCity,\appstate=ApplicantState,\appzip=ApplicantCountry,\phone=Phone,\email=Email,\gradmonth=GraduationMonth,\body=Body}
 
 	\setcounter{page}{0}
 
@@ -60,7 +60,7 @@
 
 	Dear Members of the Recruiting Committee,
 
-	I am writing to apply for the position of \position. I believe that \institution offers a stimulating environment to conduct high quality research. I will complete my Ph.D. in Economics at Yale University by June 2020.
+	I am writing to apply for the position of \position. I am excited by the stimulating research environment at \institution. I will complete my Ph.D. in \appinst, \appdept, by \gradmonth.
 
 	\body
 
