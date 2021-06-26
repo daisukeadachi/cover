@@ -11,5 +11,6 @@
 - automate filling address
   - perhaps by fetching google map information
 - set up a webpage with a form that accepts above inputs and return downloadable set of cover letters, ideally by `output.zip`
+  - i don't know exactly how. please let me know if you know it!
 - possibly include applicant's institution logo and hand-written signature (but these seem just aesthetic and minor)
 
