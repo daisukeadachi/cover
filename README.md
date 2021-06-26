@@ -1,6 +1,6 @@
 # cover
 
-- this folder is meant to automatically generate cover letters for academic job applications.
+- this repository is meant to automatically generate cover letters for academic job applications.
 - direction: fill inputs (explained below) and simply execute `main.py`. cover letters are generated in `output` folder.
 - inputs are `list.csv` and `info.csv`
   - `list.csv`: the most important part. list the institution, department, and position you want to apply to. you can also fill the address (optional)
