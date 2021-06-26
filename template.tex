@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+
+% some standard packages
+\usepackage{hyperref}
+	\hypersetup{colorlinks=true,urlcolor=blue,citecolor=blue}
+\usepackage{graphicx}
+\usepackage{float}
+
+% some interesting packages
+\usepackage{datatool}			% read a database from csv
+	\DTLloaddb{list}{list_part.csv} 	% use your actual application list database here
+	\DTLloaddb{info}{info.csv} 	% use your actual information database here
+\usepackage{parskip}			% no indentation
+\pagenumbering{gobble}			% no page number
+\usepackage{newtxtext,newtxmath}	% Times New Roman font
+
+% line spacing and margins
+\def\baselinestretch{1.2}
+\oddsidemargin -5pt \evensidemargin -5pt \topmargin -1.5cm \baselineskip -10pt \textwidth 470pt \textheight 700pt
+
+% Blank/missing fields commands
+\makeatletter
+	% \skipblank adds \\ to filled field; * version adds \space instead of newline
+	\newcommand\skipblank{\@ifstar\@spskip\@nlskip}
+	\newcommand\@nlskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\\}}
+	\newcommand\@spskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\space}}
+	% \checkblank replaces blank fields with ***
+	\newcommand\checkblank[1]{\ifthenelse{\DTLiseq{#1}{}}{{\color{white}3456789}}{#1}}
+\makeatother
+
+
+
+\begin{document}
+
+\DTLassign{list}{1}{\institution=Institution,\position=Position,\dept=Department,\addressi=Address1,\addressii=Address2,\addressiii=Address3,\city=City,\state=State,\zip=Zip,\country=Country}
+\DTLassign{info}{1}{\name=Name,\appaddressi=ApplicantAddress1,\appaddressii=ApplicantAddress2,\appaddressiii=ApplicantAddress3,\appcity=ApplicantCity,\appstate=ApplicantState,\appzip=ApplicantCountry,\phone=Phone,\email=Email,\body=Body}
+
+	\setcounter{page}{0}
+
+	\hspace*{\fill} \name									\\
+	\hspace*{\fill} \appaddressi \ \appaddressii \ \appaddressiii		\\
+	\hspace*{\fill} \appcity \ \appstate \ \appzip					\\
+	\hspace*{\fill} \phone									\\
+	\hspace*{\fill} \email									\\
+
+
+	\bigskip
+
+	\today 
+
+	\bigskip
+	
+	\skipblank{\institution}
+	\skipblank{\dept}
+	\skipblank{\addressi \ \addressii \ \addressiii}
+	\skipblank{\city \ \state \ \zip}
+	\skipblank{\country}
+
+
+
+	Dear Members of the Recruiting Committee,
+
+	I am writing to apply for the position of \position. I believe that \institution offers a stimulating environment to conduct high quality research. I will complete my Ph.D. in Economics at Yale University by June 2020.
+
+	\body
+
+	Please do not hesitate to contact me with further questions. Thank you for your consideration.
+
+	\bigskip
+	Sincerely,
+
+	\name
+
+
+	\clearpage
+
+\end{document}
