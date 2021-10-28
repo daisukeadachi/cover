@@ -6,7 +6,7 @@
   - `list.csv`: the most important part. list the institution, department, and position you want to apply to. you can also fill the address (optional)
   - `info.csv`: your information
 
-## to do
+## to do list
 
 - automate filling address
   - perhaps by fetching google map information
